@@ -19,7 +19,7 @@ RUN mkdir -p /.npm $HOME/.npm-global/lib && \
     chmod -R g=u /app /.npm $HOME
 
 # Add scripts
-COPY build/package/scripts/build.sh /usr/local/bin/build-npm
+COPY build/images/scripts/build.sh /usr/local/bin/build-npm
 ADD https://raw.githubusercontent.com/opendevstack/ods-pipeline/master/build/package/scripts/cache-build.sh /usr/local/bin/cache-build
 ADD https://raw.githubusercontent.com/opendevstack/ods-pipeline/master/build/package/scripts/copy-build-if-cached.sh /usr/local/bin/copy-build-if-cached
 ADD https://raw.githubusercontent.com/opendevstack/ods-pipeline/master/build/package/scripts/copy-artifacts.sh /usr/local/bin/copy-artifacts

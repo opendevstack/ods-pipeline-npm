@@ -39,7 +39,7 @@ spec:
     - name: build-script
       description: >-
         Build script to execute. The
-        link:https://github.com/opendevstack/ods-pipeline/blob/master/build/package/scripts/build-npm.sh[default script]
+        link:https://github.com/opendevstack/ods-pipeline-npm/blob/main/build/images/scripts/build.sh[default script]
         is located in the container image. If you specify a relative path
         instead, it will be resolved from the workspace. See the task definition
         for details how the build script is invoked.
@@ -54,7 +54,7 @@ spec:
       name: build-reused-from-location
   steps:
     - name: build-npm
-      # Image is built from build/package/Dockerfile.node<xx>-npm-toolset.
+      # Image is built from build/images/Dockerfile.node<xx>-npm-toolset.
       image: '{{.ImageRepository}}/node$(params.node-version)-npm-toolset:{{.Version}}'
       env:
         - name: HOME

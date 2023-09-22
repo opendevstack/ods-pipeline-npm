@@ -14,7 +14,7 @@ be done by running `eslint --init` or by following the
 link:https://eslint.org/docs/user-guide/getting-started[official documentation].
 
 The exact build recipe can be found at
-link:https://github.com/opendevstack/ods-pipeline/blob/master/build/package/scripts/build-npm.sh[build/package/scripts/build-npm.sh].
+link:https://github.com/opendevstack/ods-pipeline-npm/blob/main/build/images/scripts/build.sh[build/images/scripts/build.sh].
 In particular, `npm run build` is expected to place outputs into `dist` and
 `npm run test` is expected to create `build/test-results/test/report.xml`
 and `build/coverage/{clover.xml,coverage-final.json,lcov.info}`.
