@@ -19,19 +19,14 @@ RUN mkdir -p /.npm $HOME/.npm-global/lib && \
     chmod -R g=u /app /.npm $HOME
 
 # Add scripts
-COPY build/package/scripts/build-npm.sh /usr/local/bin/build-npm
-COPY build/package/scripts/cache-build.sh /usr/local/bin/cache-build
-COPY build/package/scripts/copy-build-if-cached.sh /usr/local/bin/copy-build-if-cached
-COPY build/package/scripts/copy-artifacts.sh /usr/local/bin/copy-artifacts
-COPY build/package/scripts/supply-sonar-project-properties-default.sh /usr/local/bin/supply-sonar-project-properties-default
+COPY build/package/scripts/build.sh /usr/local/bin/build-npm
+ADD https://raw.githubusercontent.com/opendevstack/ods-pipeline/master/build/package/scripts/cache-build.sh /usr/local/bin/cache-build
+ADD https://raw.githubusercontent.com/opendevstack/ods-pipeline/master/build/package/scripts/copy-build-if-cached.sh /usr/local/bin/copy-build-if-cached
+ADD https://raw.githubusercontent.com/opendevstack/ods-pipeline/master/build/package/scripts/copy-artifacts.sh /usr/local/bin/copy-artifacts
 RUN chmod +x /usr/local/bin/build-npm && \
     chmod +x /usr/local/bin/cache-build && \
     chmod +x /usr/local/bin/copy-build-if-cached && \
-    chmod +x /usr/local/bin/copy-artifacts && \
-    chmod +x /usr/local/bin/supply-sonar-project-properties-default
-
-# Add sonar-project.properties
-COPY build/package/sonar-project.properties.d/npm.properties /usr/local/default-sonar-project.properties
+    chmod +x /usr/local/bin/copy-artifacts
 
 VOLUME /workspace/source
 # Ensure that file permissions do not prevent Git checkout into workspace.
