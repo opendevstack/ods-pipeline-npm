@@ -8,7 +8,7 @@ spec:
   description: |
     Builds NPM applications.
 
-    See https://github.com/opendevstack/ods-pipeline-npm/blob/v0.1.0/docs/build.adoc
+    See https://github.com/opendevstack/ods-pipeline-npm/blob/vlatest/docs/build.adoc
   params:
     - name: working-dir
       description: |
@@ -57,7 +57,7 @@ spec:
   steps:
     - name: build-npm
       # Image is built from build/images/Dockerfile.node<xx>-npm-toolset.
-      image: 'ghcr.io/opendevstack/ods-pipeline-npm/node$(params.node-version)-npm-toolset:0.1.0'
+      image: 'ghcr.io/opendevstack/ods-pipeline-npm/node$(params.node-version)-npm-toolset:latest'
       env:
         - name: HOME
           value: '/tekton/home'
