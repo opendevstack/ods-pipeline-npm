@@ -48,7 +48,7 @@ spec:
       type: string
       default: "/usr/local/bin/build-npm"
     - name: node-version
-      description: "Node.js version to use - supported versions: 16, 18"
+      description: "Node.js version to use - supported version: 18"
       type: string
       default: "18"
   results:
