@@ -2,7 +2,7 @@
 
 [![Tests](https://github.com/opendevstack/ods-pipeline-npm/actions/workflows/main.yaml/badge.svg)](https://github.com/opendevstack/ods-pipeline-npm/actions/workflows/main.yaml)
 
-Tekton task for use with [ODS Pipeline](https://github.com/opendevstack/ods-pipeline) to build Go applications.
+Tekton task for use with [ODS Pipeline](https://github.com/opendevstack/ods-pipeline) to build applications with NPM.
 
 ## Usage
 
